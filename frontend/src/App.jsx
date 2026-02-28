@@ -17,7 +17,7 @@ function App() {
       <h1>{profile.name}</h1>
       <h3>{profile.role}</h3>
 
-      <h2>Skills</h2>
+      <h2 className="skills-header">Skills</h2>
       <ul>
         {profile.skills.map((s, i) => <li key={i}>{s}</li>)}
       </ul>
