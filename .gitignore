@@ -1,0 +1,19 @@
+# environment secrets
+.env
+*.env
+backend/.env
+frontend/.env
+
+# docker secrets
+app/.env
+
+# python
+__pycache__/
+*.pyc
+
+# node
+node_modules/
+dist/
+
+# OS
+.DS_Store
