@@ -12,6 +12,12 @@ function App() {
 
   if (!profile) return <h2>Loading portfolio...</h2>;
 
+useEffect(() => {
+  fetch(`${import.meta.env.VITE_API_URL}/projects`)
+    .then(res => res.json())
+    .then(data => setProjects(data));
+}, []);
+
   return (
     <div style={{ fontFamily: "Arial", padding: "40px" }}>
       <h1>{profile.name}</h1>
@@ -25,12 +31,12 @@ function App() {
       <h2>Experience</h2>
       <p>{profile.experience}</p>
 
-      <h2>Projects</h2>
-      {profile.projects.map((p, i) => (
-        <div key={i}>
-          <strong>{p.title}</strong> — {p.tech}
-        </div>
-      ))}
+     <h2>Projects</h2>
+{projects.map(p => (
+  <div key={p.id}>
+    <b>{p.title}</b> — {p.tech}
+  </div>
+))}
     </div>
   );
 }
